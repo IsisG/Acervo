@@ -1,0 +1,57 @@
+  <html>
+   <body>
+  <main>
+		<div class="container text-dark">
+			<h2 class="">Cadastro do Acervo</h2>
+      <hr>
+      {{form.value | json}}
+			<form #form="ngForm" [formGroup]="registerForm">
+				<table class="table table-borderless">
+					<thead>
+						<tr>		
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Código:</th>
+							<td> <input type="text" id="codigo" name="codigo" class="form-control" formControlName="codigo"></td>
+							<div *ngIf="registerForm.controls.codigo.errors"></div>
+						</tr>
+						<tr>
+							<th scope="row">Título:</th>
+							<td> <input type="text" id="titulo" name="titulo" class="form-control" formControlName="titulo" ></td>
+							
+						</tr>
+						<tr>
+							<th scope="row">Autor:</th>
+							<td> <input type="text" id="autor" name="autor" class="form-control" formControlName="autor"></td>
+							
+						</tr>
+						<tr>
+							<th scope="row">Editora</th>
+							<td> <input type="text" id="editora" name="editora" class="form-control" formControlName="editora" ></td>
+							
+						</tr>
+						<tr>
+							<th scope="row">Ano:</th>
+							<td> <input type="text" id="ano" name="ano" class="form-control" formControlName="ano" ></td>
+							
+            		</tr>
+            		<tr>
+							<th scope="row">Status:</th>
+							<td> <input type="text" id="status_livro" name="status_livro" class="form-control" formControlName="status_livro"></td>
+							
+						</tr>
+
+					</tbody>
+				</table>
+				<button (click)="livroCadastrar(form.value)" [disabled]="!registerForm.valid" class="btn btn-info float-right mr-2">Cadastrar</button>
+			</form>
+		</div>
+
+	</main>
+  	<footer>
+
+	</footer>
+</body>
+</html>

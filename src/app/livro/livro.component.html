@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="">Lista de Livros</h1>
+   <hr style="margin-top: 0" class="mb-5">
+    <br>
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Título</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Editora</th>
+        <th scope="col">Ano</th>
+        <th scope="col">Status</th>
+        <th scope="col-md-8">Ações</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr *ngIf = "livro?.length <= 0">
+        <td>Não há registros.</td>
+      </tr>
+      <tr *ngFor="let item of livro">
+        <th #cod scope="row">{{item.codigo}}</th>
+        <td>{{item.titulo}}</td>
+        <td>{{item.autor}}</td>
+        <td>{{item.editora}}</td>
+        <td>{{item.ano}}</td>
+        <td><input type="text" ngModel="{{item.status_livro}}"
+          disabled="true" class="border-0  back-input text-center" [class.teste]="item.status_livro!='Disponível'"></td>
+        <td><button (click)="habilitar(item)">Editar</button>
+          <button (click)="removerLivro(item)">Apagar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

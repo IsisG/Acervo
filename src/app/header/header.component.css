@@ -1,0 +1,16 @@
+#nav-menu ul li{
+    padding: 1rem;
+
+}
+
+#nav-menu ul li:hover{
+ background: #2abdd4;
+
+ transition: all 1s;
+ 
+}
+
+#nav-menu{
+
+	padding: 0 !important
+}
